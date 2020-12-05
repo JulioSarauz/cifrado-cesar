@@ -10,6 +10,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {InputTextModule} from 'primeng/inputtext';
 import {RippleModule} from 'primeng/ripple';
+import {SelectButtonModule} from 'primeng/selectbutton';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {RippleModule} from 'primeng/ripple';
     MatGridListModule,
     MatToolbarModule,
     InputTextModule,
-    RippleModule
+    RippleModule,
+    SelectButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,13 +8,29 @@
   <div class="row" style="margin-bottom: 1%;">
     <div class="col-sm"></div>
     <div class="col-sm">
+      <p-selectButton [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" (click)="CambiarCifrado()"></p-selectButton>  
+    </div>
+    <div class="col-sm"></div>
+  </div>
+  
+
+  <div class="row" style="margin-bottom: 1%;"  *ngIf="selectedCity.code==='1'">
+    <div class="col-sm"></div>
+    <div class="col-sm">
      <h1><b>Ingrese número de saltos</b></h1> 
     </div>
     <div class="col-sm"></div>
   </div>
 
+  <div class="row" style="margin-bottom: 1%;"  *ngIf="selectedCity.code==='2'">
+    <div class="col-sm"></div>
+    <div class="col-sm">
+     <h1><b>Cifra el texto</b></h1> 
+    </div>
+    <div class="col-sm"></div>
+  </div>
 
-  <div class="row" style="margin-bottom: 3%;">
+  <div class="row" style="margin-bottom: 3%;" *ngIf="selectedCity.code==='1'">
     <div class="col-sm"></div>
     <div class="col-sm">
         <input id="float-input" type="text" [(ngModel)]="saltos" (keyup)="NumeroSaltos()" pInputText>
@@ -22,17 +38,42 @@
     <div class="col-sm"></div>
   </div>
 
+  <div class="row" style="margin-bottom: 3%;" *ngIf="selectedCity.code==='2'">
+    <div class="col-sm"></div>
+    <div class="col-sm" style="margin-bottom: 5%;">
+        
+    </div>
+    <div class="col-sm"></div>
+  </div>
+
   <div class="container">
     <div class="row">
-      <div class="col-sm">
-        <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="msm1" (keyup)="Encriptar()"></textarea>
-      </div>
-      <div class="col-sm" >
-        <img src="../assets/cesar.jpg" width="40%" height="80%">
-      </div>
-      <div class="col-sm">
-        <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="msm2" (keyup)="Desencriptar()"></textarea>
-      </div>
+
+
+
+          <div class="col-sm" *ngIf="selectedCity.code === '2'">
+            <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="msm1" (keyup)="Encriptar()"></textarea>
+          </div>
+          <div class="col-sm" *ngIf="selectedCity.code === '1' && alfa2.length !== 0">
+            <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="msm1" (keyup)="Encriptar()"></textarea>
+          </div>
+          <div class="col-sm" *ngIf="selectedCity.code === '1' && alfa2.length === 0">
+            <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="msm1" (keyup)="Encriptar()" disabled></textarea>
+          </div>
+          <div class="col-sm" >
+            <img src="{{ruta_img}}" width="40%" height="80%">
+          </div>
+          <div class="col-sm" *ngIf="selectedCity.code === '1' && alfa2.length !== 0">
+            <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="msm2" (keyup)="Desencriptar()"></textarea>
+          </div>
+         
+          <div class="col-sm" *ngIf="selectedCity.code === '1' && alfa2.length === 0">
+            <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="msm2" (keyup)="Desencriptar()" disabled></textarea>
+          </div>          
+         <div class="col-sm" *ngIf="selectedCity.code === '2'">
+            <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" [(ngModel)]="msm2" (keyup)="Desencriptar2()"></textarea>
+          </div>
+
     </div>
   </div>
 
