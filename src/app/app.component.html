@@ -1,6 +1,6 @@
 
-<mat-toolbar>
-  <span>Criptografía</span>
+<mat-toolbar style="background-color: rgb(38, 121, 141); color:rgb(255, 255, 255);">
+  <span>CRIPTOGRAFÍA</span>
 </mat-toolbar>
 
 <div style="margin-top: 2%; text-align: center;">
@@ -31,19 +31,27 @@
   </div>
 
   <div class="row" style="margin-bottom: 3%;" *ngIf="selectedCity.code==='1'">
-    <div class="col-sm"></div>
+    <div class="col-sm">
+      <img src="../assets/flecha_izq.png">
+    </div>
     <div class="col-sm">
         <input id="float-input" type="text" [(ngModel)]="saltos" (keyup)="NumeroSaltos()" pInputText>
     </div>
-    <div class="col-sm"></div>
+    <div class="col-sm" >
+      <img src="../assets/flecha_der.png">
+    </div>
   </div>
 
   <div class="row" style="margin-bottom: 3%;" *ngIf="selectedCity.code==='2'">
-    <div class="col-sm"></div>
+    <div class="col-sm">
+       <img src="../assets/flecha_izq.png">
+    </div>
     <div class="col-sm" style="margin-bottom: 5%;">
         
     </div>
-    <div class="col-sm"></div>
+    <div class="col-sm">
+      <img src="../assets/flecha_der.png">
+    </div>
   </div>
 
   <div class="container">
