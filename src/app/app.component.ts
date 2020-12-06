@@ -21,7 +21,7 @@ export class AppComponent {
   alfa2:Array<data> = [];
   letrasSeparadas:Array<data>=[];
   l:data;
-  ruta_img:string ='../assets/cesar.jpg';
+  ruta_img:string ='../assets/cesar.png';
   cities: City[];
 
   selectedCity: City = {name:'CÉSAR',code:'1'};
@@ -150,7 +150,7 @@ export class AppComponent {
         }
       }
     }else{
-      this.ruta_img = '../assets/cesar.jpg';
+      this.ruta_img = '../assets/cesar.png';
       this.alfa2=[];
     }
     
